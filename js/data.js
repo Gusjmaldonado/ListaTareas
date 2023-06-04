@@ -1,7 +1,7 @@
 const tareas = new Array(
     {
         id: 1,
-        titulo: 'Estudiar JAvaScript',
+        titulo: 'Estudiar JavaScript',
         prioridad: 'urgente'
     },
     {
