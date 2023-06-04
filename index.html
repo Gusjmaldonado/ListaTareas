@@ -23,11 +23,11 @@
                     aria-describedby="inputGroup-sizing-sm">
             </div>
             <div class="col">
-                <select class="form-select form-select-md" aria-label=".form-select-sm example">
-                    <option selected>Prioridad</option>
-                    <option value="1">Urgente</option>
-                    <option value="2">Diaria</option>
-                    <option value="3">Mensual</option>
+                <select id="prioridad" class="form-select form-select-md" aria-label=".form-select-sm example">
+                    <option value="">Prioridad</option>
+                    <option value="urgente">Urgente</option>
+                    <option value="diaria">Diaria</option>
+                    <option value="mensual">Mensual</option>
                 </select>
             </div>
             <div class="col text-start">
@@ -35,14 +35,13 @@
             </div>
         </div>
         <div id="med" class="row pt-4 col-12 bg-success">
-            <select class="form-select form-select-lg mb-3 ms-2 col" aria-label=".form-select-lg example">
+            <select id="selector" class="form-select form-select-lg mb-3 ms-2 col" aria-label=".form-select-lg example">
                 <option selected>Prioridad</option>
-                <option value="1">Urgente</option>
-                <option value="2">Diaria</option>
-                <option value="3">Mensual</option>
+                <option value="urgente">Urgente</option>
+                <option value="diaria">Diaria</option>
+                <option value="mensual">Mensual</option>
             </select>
             <div class="input-group mb-3 ms-1 col">
-                <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
                 <input type="text" class="form-control" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-default">
             </div>
