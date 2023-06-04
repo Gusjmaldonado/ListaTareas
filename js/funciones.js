@@ -21,15 +21,23 @@ function printOneTarea(pTarea, pdom) {
 
 function printTareas(pLista, pDom) {
     pLista.forEach(tarea => printOneTarea(tarea, pDom)
-
     );
 }
 
-function comprobarDatos(pInput) {
-    return pInput.titulo.value !== '' && 
+function saveTarea(pLista, pTarea) {
+    let duplicado = pLista.findIndex(tarea => tarea.titulo === tarea.mail)
+    if (duplicado === -1) {
+
+        pLista.push(pTarea);
+        return 'success';
+    }
+
+    return 'Tarea existente'
+
 }
 
-function getTarea() {
+function getTarea(event) {
+
 
 }
 
