@@ -39,7 +39,7 @@ function saveTarea(pLista, pTarea) {
 }
 
 
-//
+//event getTarea para agregar las tareas nuevas, condicionando el input y el select para que no esten vacios
 function getTarea(event) {
 
     if (inputTarea.value === '' || select.value === '') {
@@ -66,6 +66,16 @@ function getTarea(event) {
     }
 }
 
+
+function filterPatientsByDiagnosis(pPatientsList, pDiagnosis) {
+    const filterList = [];
+    for (let patient of pPatientsList) {
+        if (patient.diagnostico.toLowerCase().includes(pDiagnosis.toLowerCase())) {
+            filterList[filterList.length] = patient;
+        }
+    }
+    return filterList;
+}
 
 //para crear evento
 btn.addEventListener('click', getTarea)
