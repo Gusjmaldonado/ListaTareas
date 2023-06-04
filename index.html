@@ -17,9 +17,9 @@
 <body>
 
     <section class="container text-center pt-3">
-        <div id="top" class="row">
+        <div id="top" class="row bg-success-subtle">
             <div class="col">
-                <input type="text" class="form-control" aria-label="Sizing example input"
+                <input id="tarea" type="text" class="form-control" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm">
             </div>
             <div class="col">
@@ -31,15 +31,15 @@
                 </select>
             </div>
             <div class="col text-start">
-                <button type="button" class="btn btn-info">Info</button>
+                <button id="btn" type="button" class="btn btn-info">Info</button>
             </div>
         </div>
-        <div id="med" class="row pt-4 col-12">
+        <div id="med" class="row pt-4 col-12 bg-success">
             <select class="form-select form-select-lg mb-3 ms-2 col" aria-label=".form-select-lg example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>Prioridad</option>
+                <option value="1">Urgente</option>
+                <option value="2">Diaria</option>
+                <option value="3">Mensual</option>
             </select>
             <div class="input-group mb-3 ms-1 col">
                 <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
@@ -47,8 +47,13 @@
                     aria-describedby="inputGroup-sizing-default">
             </div>
         </div>
-        <div>
+        <div id="lista">
 
+            <!--  <ul>
+                <li>
+                    <button id="btn2">Eliminar</button>
+                </li>
+            </ul> -->
         </div>
     </section>
     <footer>
