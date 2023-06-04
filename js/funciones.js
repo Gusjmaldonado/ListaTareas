@@ -67,14 +67,18 @@ function getTarea(event) {
 }
 
 
-function filterPatientsByDiagnosis(pPatientsList, pDiagnosis) {
+function filterByTarea(pTarea, pTitulo) {
     const filterList = [];
-    for (let patient of pPatientsList) {
-        if (patient.diagnostico.toLowerCase().includes(pDiagnosis.toLowerCase())) {
-            filterList[filterList.length] = patient;
+    for (let tarea of pTarea) {
+        if (tarea.diagnostico.toLowerCase().includes(pTitulo.toLowerCase())) {
+            filterList[filterList.length] = tarea;
         }
     }
     return filterList;
+}
+
+function filterByWord(pLista, pWord) {
+    return pLista.filter(tarea => tarea.titulo.toLowerCase().includes(pWord.toLowerCase()))
 }
 
 //para crear evento
