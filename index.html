@@ -17,12 +17,12 @@
 <body>
 
     <section class="container text-center pt-3">
-        <div id="top" class="row bg-success-subtle">
-            <div class="col">
+        <div id="top" class="row bg-success-subtle col-12">
+            <div class="col-4">
                 <input id="tarea" type="text" class="form-control" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm">
             </div>
-            <div class="col">
+            <div class="col-4">
                 <select id="prioridad" class="form-select form-select-md" aria-label=".form-select-sm example">
                     <option value="">Prioridad</option>
                     <option value="urgente">Urgente</option>
@@ -30,7 +30,7 @@
                     <option value="mensual">Mensual</option>
                 </select>
             </div>
-            <div class="col text-start">
+            <div class="col-4 text-start">
                 <button id="btn" type="button" class="btn btn-info">Info</button>
             </div>
         </div>
@@ -41,12 +41,12 @@
                 <option value="diaria">Diaria</option>
                 <option value="mensual">Mensual</option>
             </select>
-            <div class="input-group mb-3 ms-1 col">
+            <div id="buscador" class="input-group mb-3 ms-1 col">
                 <input type="text" class="form-control" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-default">
             </div>
         </div>
-        <div id="lista">
+        <div id="lista" class="col-12 bg-success-subtle">
 
             <!--  <ul>
                 <li>
