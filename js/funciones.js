@@ -13,11 +13,17 @@ function printOneTarea(pTarea, pDom) {
     const ul = document.createElement('ul')
     const li = document.createElement('li')
     const btn = document.createElement('button')
-    ul.className = 'list-group col-12'
+
+    ul.className = 'list-group col-12 row'
+
     li.textContent = pTarea.titulo
     li.className = 'list-group-item col-6'
+
     btn.textContent = 'Eliminar'
     btn.className = 'btn btn-outline-danger col-6'
+    btn.dataset.id = pTarea.id
+    btn.addEventListener('click', deleteItem)
+
     ul.append(li, btn)
     pDom.appendChild(ul)
 }
@@ -29,7 +35,7 @@ function printTareas(pLista, pDom) {
     if (pLista.length !== 0) {
         pLista.forEach(tarea => printOneTarea(tarea, pDom))
     } else {
-        pDom.innerHTML = `<h2>NO HAY RESULTADO</h2>`
+        pDom.innerHTML = `<h2>NO HAY TAREAS PENDIENTES</h2>`
     }
 
 }
@@ -73,19 +79,24 @@ function getTarea(event) {
     }
 }
 
-
-function filterByTarea(pTareaLista, pTitulo) {
+//filterByTarea() filtra la prioridad de las tareas
+function filterByTarea(pTareaLista, pPrioridad) {
     const filterList = [];
     for (let tarea of pTareaLista) {
-        if (tarea.titulo.toLowerCase().includes(pTitulo.toLowerCase())) {
+        if (tarea.prioridad.includes(pPrioridad)) {
             filterList[filterList.length] = tarea;
         }
     }
     return filterList;
 }
 
+//getchange() filtra por prioridad las tareas existentes
+function getchange(event) {
+    let listaFiltrada = filterByTarea(tareas, event.target.value)
 
+    printTareas(listaFiltrada, seccionTarea)
 
+}
 
 
 //filterByWord() filtra a traves de una palabra 
@@ -105,6 +116,18 @@ function getSearch(event) {
 
 }
 
+//deleteItem()lanza el evento desde el boton para eliminar la tarea asociada
+function deleteItem(event) {
+    let id = parseInt(event.target.dataset.id)
+    console.log(typeof id);
+
+    const articleDelete = event.target.parentNode
+    articleDelete.parentNode.removeChild(articleDelete)
+
+    //borrar del array, necesito saber el id, como ya lo tiene, se hace splice
+    deleteItemArray(id, tareas)
+}
+
 //para crear evento
 btn.addEventListener('click', getTarea)
 
@@ -114,7 +137,7 @@ inputBuscador.addEventListener('keypress', getSearch)
 //evento para filtrar por prioridad
 selectSelector.addEventListener('change', getchange)
 
-
+//uso de la funcion
 printTareas(tareas, seccionTarea)
 
 
