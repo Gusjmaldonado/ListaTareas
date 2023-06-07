@@ -85,13 +85,13 @@ function filterByTarea(pTareaLista, pTitulo) {
 }
 
 
-//filterByWord()
+
+
+
+//filterByWord() filtra a traves de una palabra 
 function filterByWord(pLista, pWord) {
     return pLista.filter(tarea => tarea.titulo.toLowerCase().includes(pWord.toLowerCase()))
 }
-
-//evento para ver las tareas
-inputBuscador.addEventListener('keypress', getSearch)
 
 //getSearch() se usa para buscar o filtrar las tareas registradas a traves del input solo cuando se usa el enter
 function getSearch(event) {
@@ -107,6 +107,12 @@ function getSearch(event) {
 
 //para crear evento
 btn.addEventListener('click', getTarea)
+
+//evento para ver las tareas
+inputBuscador.addEventListener('keypress', getSearch)
+
+//evento para filtrar por prioridad
+selectSelector.addEventListener('change', getchange)
 
 
 printTareas(tareas, seccionTarea)
