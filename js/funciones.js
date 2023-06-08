@@ -13,18 +13,35 @@ function printOneTarea(pTarea, pDom) {
     const ul = document.createElement('ul')
     const li = document.createElement('li')
     const btn = document.createElement('button')
+    const div = document.createElement('div')
 
-    ul.className = 'list-group col-12 row'
 
+    ul.className = 'row m-2 '
+
+    let priority = ''
     li.textContent = pTarea.titulo
-    li.className = 'list-group-item col-6'
+
+    if (pTarea.prioridad === 'diaria') {
+        priority = 'border-success-subtle'
+    } else if (pTarea.prioridad === 'mensual') {
+        priority = 'border-primary-subtle'
+    } else {
+        priority = 'border-danger-subtle'
+    }
+
+    li.className = `list-group-item col-6 ps-1 border-bottom border-start border-5 fs-4 ${priority}`
+
+    div.className = 'col-6 p-2 text-center'
 
     btn.textContent = 'Eliminar'
-    btn.className = 'btn btn-outline-danger col-6'
+    btn.className = 'btn btn-outline-secondary col-10 '
     btn.dataset.id = pTarea.id
     btn.addEventListener('click', deleteItem)
 
-    ul.append(li, btn)
+
+
+    div.appendChild(btn)
+    ul.append(li, div)
     pDom.appendChild(ul)
 }
 
@@ -77,6 +94,9 @@ function getTarea(event) {
         alert(guardado)
         //event.target.mail.style.border = '3px solid red'
     }
+
+    inputTarea.value = ''
+    selectPrioridad.value = ''
 }
 
 //filterByTarea() filtra la prioridad de las tareas
@@ -116,12 +136,22 @@ function getSearch(event) {
 
 }
 
+
+function deleteItemArray(pId, pList) {
+    //splice borrar por posicion, tenemos que saber su posicion
+    // findIndex devuelve la posicion si se cumple la condicion y -1 si no se cumple
+    let posicionBorrar = pList.findIndex(item = item.id === pId)
+    if (posicionBorrar !== -1) {
+        pList.splice(posicionBorrar, 1)
+    }
+    console.log(pList);
+}
+
 //deleteItem()lanza el evento desde el boton para eliminar la tarea asociada
 function deleteItem(event) {
     let id = parseInt(event.target.dataset.id)
-    console.log(typeof id);
 
-    const articleDelete = event.target.parentNode
+    const articleDelete = event.target.parentNode.parentNode
     articleDelete.parentNode.removeChild(articleDelete)
 
     //borrar del array, necesito saber el id, como ya lo tiene, se hace splice

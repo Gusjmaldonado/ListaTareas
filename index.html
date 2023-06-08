@@ -16,48 +16,57 @@
 
 <body>
 
-    <section class="container text-center pt-3">
-        <div id="top" class="row bg-success-subtle col-12">
-            <div class="col-4">
-                <input id="tarea" type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-sm">
-            </div>
-            <div class="col-4">
-                <select id="prioridad" class="form-select form-select-md" aria-label=".form-select-sm example">
-                    <option value="">Prioridad</option>
-                    <option value="urgente">Urgente</option>
-                    <option value="diaria">Diaria</option>
-                    <option value="mensual">Mensual</option>
-                </select>
-            </div>
-            <div class="col-4 text-start">
-                <button id="btn" type="button" class="btn btn-info">Info</button>
-            </div>
-        </div>
-        <div id="med" class="row pt-4 col-12 bg-success">
-            <select id="selector" class="form-select form-select-lg mb-3 ms-2 col" aria-label=".form-select-lg example">
-                <option selected>Prioridad</option>
-                <option value="urgente">Urgente</option>
-                <option value="diaria">Diaria</option>
-                <option value="mensual">Mensual</option>
-            </select>
-            <div id="buscador" class="input-group mb-3 ms-1 col">
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-        <div id="lista" class="row col-12 bg-success-subtle">
+    <section class="container p-3 bg-black">
+        <header class="row bg-dark-subtle">
+            <h1>Lista de tareas</h1>
+        </header>
+        <main>
+            <div id="top" class="row text-center bg-body-secondary p-2">
 
-            <!--  <ul>
-                <li>
+                <div class="col-4 mt-2">
+                    <input id="tarea" type="text" class="form-control">
+                </div>
+                <div class="col-4 mt-2">
+                    <select id="prioridad" class="form-select form-select-md">
+                        <option value="">Prioridad</option>
+                        <option value="urgente">Urgente</option>
+                        <option value="diaria">Diaria</option>
+                        <option value="mensual">Mensual</option>
+                    </select>
+                </div>
+                <div class="col-4 mt-2">
+                    <button id="btn" type="button" class="btn btn-secondary">Guardar</button>
+                </div>
+
+            </div>
+            <div id="med" class="row p-2 bg-body-tertiary">
+
+                <div class=" col-6">
+                    <select id="selector" class="form-select form-select-md">
+                        <option selected>Prioridad</option>
+                        <option value="urgente">Urgente</option>
+                        <option value="diaria">Diaria</option>
+                        <option value="mensual">Mensual</option>
+                    </select>
+                </div>
+                <div id="buscador" class=" col-6">
+                    <input type="text" class="form-control">
+                </div>
+
+            </div>
+            <div id="lista" class="row bg-body-tertiary">
+
+                <!-- <ul>
+                    <li></li>
                     <button id="btn2">Eliminar</button>
-                </li>
-            </ul> -->
-        </div>
+                </ul> -->
+            </div>
+        </main>
+        <footer class="row bg-dark-subtle">
+            <h2>App ToDo Gustavo's</h2>
+        </footer>
     </section>
-    <footer>
 
-    </footer>
 
     </section>
     <script src="./js/funciones.js"></script>
