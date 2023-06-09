@@ -59,7 +59,7 @@ function printTareas(pLista, pDom) {
 
 //saveTarea() con el fin de no duplicar la tarea
 function saveTarea(pLista, pTarea) {
-    let duplicado = pLista.findIndex(tarea => tarea.titulo === pTarea.titulo)
+    let duplicado = pLista.findIndex(tarea => tarea.titulo.toLowerCase() === pTarea.titulo.toLowerCase())
     if (duplicado === -1) {
 
         pLista.push(pTarea);
